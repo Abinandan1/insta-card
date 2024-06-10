@@ -1,7 +1,7 @@
 import "express-async-errors";
 import express from "express";
 import { BadRequestError } from "./errors/CustomError.js";
-import path, { dirname } from "path";
+import { dirname, join, resolve } from "path";
 import { fileURLToPath } from "url";
 import { errorHandlerMiddleware } from "./middleware/errorHandlerMiddleware.js";
 import expressFileUpload from "express-fileupload";
@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(expressFileUpload({ useTempFiles: true }));
 const __dirname = dirname(fileURLToPath(import.meta.url));
-app.use(express.static(path.resolve(__dirname, "./client/dist")));
+app.use(express.static(resolve(__dirname, "./client/dist")));
 app.post("/api/v1/user/upload-image", async (req, res) => {
   if (!req.files) throw new BadRequestError("No file uploaded");
   const image = req.files.image;
@@ -19,8 +19,8 @@ app.post("/api/v1/user/upload-image", async (req, res) => {
   if (image.size > maxFileSize)
     throw new BadRequestError("Please upload image smaller than 10MB");
   const __filename = fileURLToPath(import.meta.url);
-  const __dirname = path.dirname(__filename);
-  const imagePath = path.join(__dirname, "/public/uploads/" + `${image.name}`);
+  const __dirname = dirname(__filename);
+  const imagePath = join(__dirname, "public/uploads/" + `${image.name}`);
   console.log(__filename, __dirname, imagePath);
   await image.mv(imagePath);
   res.json({ img: { src: `/uploads/${image.name}` } });
@@ -28,7 +28,8 @@ app.post("/api/v1/user/upload-image", async (req, res) => {
 
 // FRONTEND
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./client/dist", "index.html"));
+  console.log(resolve(__dirname, "./client/dist", "index.html"));
+  res.sendFile(resolve(__dirname, "./client/dist", "index.html"));
 });
 
 app.use(errorHandlerMiddleware);
