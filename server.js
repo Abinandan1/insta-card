@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(expressFileUpload({ useTempFiles: true }));
 const __dirname = dirname(fileURLToPath(import.meta.url));
-app.use(express.static(path.resolve(__dirname, "./public")));
+app.use(express.static(path.resolve(__dirname, "./client/dist")));
 app.post("/api/v1/user/upload-image", async (req, res) => {
   if (!req.files) throw new BadRequestError("No file uploaded");
   const image = req.files.image;
@@ -28,7 +28,7 @@ app.post("/api/v1/user/upload-image", async (req, res) => {
 
 // FRONTEND
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./public", "index.html"));
+  res.sendFile(path.resolve(__dirname, "./client/dist", "index.html"));
 });
 
 app.use(errorHandlerMiddleware);
