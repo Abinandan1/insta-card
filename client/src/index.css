@@ -1,0 +1,45 @@
+/* FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Slabo+27px&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+:root {
+  --primary-color: #f65d46;
+  --secondary-color: #ffa95d;
+  --black-color: #000000;
+  --dark-color: #262435;
+  --white-color: #ffffff;
+  --light-color: #f5fffa;
+  --gray-color-50: #f8fafc;
+  --gray-color-100: #f1f5f9;
+  --gray-color-200: #e2e8f0;
+  --gray-color-300: #cbd5e1;
+  --gray-color-400: #94a3b8;
+  --gray-color-500: #64748b;
+  --gray-color-600: #475569;
+  --gray-color-700: #334155;
+  --gray-color-800: #1e293b;
+  --gray-color-900: #0f172a;
+
+  --card-color: var(--white-color);
+  --dark-card-color: var(--black-color);
+  --text-color: var(--black-color);
+  --dark-text-color: var(--white-color);
+  --bg-color: var(--gray-color-100);
+  --dark-bg-color: var(--dark-color);
+
+  --shadow-1: 1px 1px 0 0 rgba(0, 0, 0, 0.1), 1px 1px 0 0 rgba(0, 0, 0, 0.1);
+  --shadow-2: 1px 1px 3px 0 rgba(0, 0, 0, 0.1), 2px 2px 3px 0 rgba(0, 0, 0, 0.1);
+  --shadow-3: 1px 1px 5px 0 rgba(0, 0, 0, 0.1), 3px 3px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme {
+  --card-color: var(--dark-card-color);
+  --text-color: var(--dark-text-color);
+  --bg-color: var(--dark-bg-color);
+}
