@@ -4,7 +4,7 @@ const Wrapper = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  min-height: 100dvh;
+  min-height: 100lvh;
   background: rgba(0, 0, 0, 0.3);
   display: grid;
   place-items: center;
