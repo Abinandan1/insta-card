@@ -28,7 +28,6 @@ app.post("/api/v1/user/upload-image", async (req, res) => {
 
 // FRONTEND
 app.get("*", (req, res) => {
-  console.log(resolve(__dirname, "./client/dist", "index.html"));
   res.sendFile(resolve(__dirname, "./client/dist", "index.html"));
 });
 
