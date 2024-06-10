@@ -5,9 +5,14 @@ import Sidebar from "../components/Sidebar";
 import Wrapper from "../wrappers/Home";
 import { fonts } from "../utils/fonts";
 import admin from "../assets/admin.jpg";
+import { useNavigation } from "react-router-dom";
+import Loading from "../components/Loading";
 
 const HomeContext = createContext();
 const Home = () => {
+  const navigation = useNavigation();
+  const [isLoading, setIsLoading] = useState(navigation.state === "loading");
+  console.log(navigation.state);
   const [font, setFont] = useState(fonts[0]);
   const [name, setName] = useState("abinandan_at");
   const [tag, setTag] = useState("Erode, India");
@@ -24,6 +29,7 @@ const Home = () => {
     <HomeContext.Provider
       value={{
         font,
+        isLoading,
         name,
         tag,
         profile,
@@ -36,6 +42,7 @@ const Home = () => {
         setColor,
         setBg,
         setContent,
+        setIsLoading,
         setContentType,
         setTheme,
         setDescription,
@@ -47,6 +54,7 @@ const Home = () => {
     >
       <Wrapper>
         <div className="home-container">
+          {isLoading && <Loading />}
           <Sidebar />
           <main>
             <Navbar />

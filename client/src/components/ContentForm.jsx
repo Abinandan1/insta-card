@@ -16,6 +16,7 @@ const ContentForm = () => {
     content,
     contentType,
     setName,
+    setIsLoading,
     setDescription,
     setTheme,
     setTag,
@@ -28,6 +29,7 @@ const ContentForm = () => {
 
   const handleImageUpload = async (e) => {
     // setContent(e.currentTarget.files);
+    setIsLoading(true);
     const imageFile = e.currentTarget.files[0];
     const formData = new FormData();
     formData.append("image", imageFile);
@@ -37,12 +39,14 @@ const ContentForm = () => {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setContent(response.data.img.src);
+      setIsLoading(false);
     } catch (error) {
       toast.error(error?.response?.data?.msg);
-      console.log(error?.response?.data?.msg);
+      setIsLoading(false);
     }
   };
   const handleProfileImageUpload = async (e) => {
+    setIsLoading(true);
     const imageFile = e.currentTarget.files[0];
     const formData = new FormData();
     formData.append("image", imageFile);
@@ -52,9 +56,10 @@ const ContentForm = () => {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setProfile(response.data.img.src);
+      setIsLoading(false);
     } catch (error) {
       toast.error(error?.response?.data?.msg);
-      console.log(error?.response?.data?.msg);
+      setIsLoading(false);
     }
   };
   return (

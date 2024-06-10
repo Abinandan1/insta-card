@@ -11,23 +11,19 @@ app.use(expressFileUpload({ useTempFiles: true }));
 const __dirname = dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.resolve(__dirname, "./public")));
 app.post("/api/v1/user/upload-image", async (req, res) => {
-  console.log("upload");
-  console.log(req.files);
-  // export const uploadImageLocal = async (req, res) => {
   if (!req.files) throw new BadRequestError("No file uploaded");
   const image = req.files.image;
   if (!image.mimetype.startsWith("image"))
     throw new BadRequestError("Please upload image");
   const maxFileSize = 10 * 1024 * 1024;
   if (image.size > maxFileSize)
-    throw new BadRequestError("Please upload image smaller than 1MB");
+    throw new BadRequestError("Please upload image smaller than 10MB");
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
   const imagePath = path.join(__dirname, "/public/uploads/" + `${image.name}`);
   console.log(__filename, __dirname, imagePath);
   await image.mv(imagePath);
   res.json({ img: { src: `/uploads/${image.name}` } });
-  // };
 });
 
 // FRONTEND

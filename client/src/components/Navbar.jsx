@@ -2,8 +2,11 @@ import Wrapper from "../wrappers/Navbar";
 import Logo from "./Logo";
 import { FiDownload } from "react-icons/fi";
 import * as htmlToImage from "html-to-image";
+import { useHomeContext } from "../pages/Home";
 const Navbar = () => {
+  const { setIsLoading } = useHomeContext();
   const handleDownload = async () => {
+    setIsLoading(true);
     const element = document.querySelector(".card");
 
     const dataUrl = await htmlToImage.toPng(element);
@@ -15,6 +18,7 @@ const Navbar = () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    setIsLoading(false);
   };
   return (
     <Wrapper>
