@@ -39,6 +39,7 @@ const ContentForm = () => {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setContent(response.data.img.src);
+      localStorage.setItem("content", response.data.img.src);
       setIsLoading(false);
     } catch (error) {
       toast.error(error?.response?.data?.msg);
@@ -56,6 +57,7 @@ const ContentForm = () => {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setProfile(response.data.img.src);
+      localStorage.setItem("profile", response.data.img.src);
       setIsLoading(false);
     } catch (error) {
       toast.error(error?.response?.data?.msg);

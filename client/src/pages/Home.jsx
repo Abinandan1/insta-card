@@ -16,9 +16,12 @@ const Home = () => {
   const [font, setFont] = useState(fonts[0]);
   const [name, setName] = useState("abinandan_at");
   const [tag, setTag] = useState("Erode, India");
-  const [profile, setProfile] = useState(admin);
+  const [profile, setProfile] = useState(
+    localStorage.getItem("profile") || admin
+  );
   const [content, setContent] = useState(
-    "Design your card to express your views, thoughts, memories & happenings. You can use these cards to share it on your social media platforms."
+    localStorage.getItem("content") ||
+      "Design your card to express your views, thoughts, memories & happenings. You can use these cards to share it on your social media platforms."
   );
   const [color, setColor] = useState("#000000");
   const [bg, setBg] = useState("#e2e8f0");
