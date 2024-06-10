@@ -40,10 +40,10 @@ const ContentForm = () => {
       });
       setContent(response.data.img.src);
       localStorage.setItem("content", response.data.img.src);
-      // setIsLoading(false);
+      setIsLoading(false);
     } catch (error) {
       toast.error(error?.response?.data?.msg);
-      // setIsLoading(false);
+      setIsLoading(false);
     }
   };
   const handleProfileImageUpload = async (e) => {
@@ -58,10 +58,10 @@ const ContentForm = () => {
       });
       setProfile(response.data.img.src);
       localStorage.setItem("profile", response.data.img.src);
-      // setIsLoading(false);
+      setIsLoading(false);
     } catch (error) {
       toast.error(error?.response?.data?.msg);
-      // setIsLoading(false);
+      setIsLoading(false);
     }
   };
   return (

@@ -3,8 +3,8 @@ const Wrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
   background: rgba(0, 0, 0, 0.3);
   display: grid;
   place-items: center;

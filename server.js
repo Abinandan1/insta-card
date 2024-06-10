@@ -23,7 +23,7 @@ app.post("/api/v1/user/upload-image", async (req, res) => {
   const imagePath = join(__dirname, "./client/dist/assets/" + `${image.name}`);
   console.log(__filename, __dirname, imagePath);
   await image.mv(imagePath);
-  res.json({ img: { src: `/uploads/${image.name}` } });
+  res.json({ img: { src: `/assets/${image.name}` } });
 });
 
 // FRONTEND
