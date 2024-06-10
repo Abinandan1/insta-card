@@ -15,7 +15,7 @@ const Wrapper = styled.div`
     width: 5rem;
     height: 5rem;
     border-top-color: var(--primary-color);
-    animation: s loading infinite linear;
+    animation: 0.7s loading infinite linear;
   }
 
   @keyframes loading {
