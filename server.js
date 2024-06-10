@@ -20,7 +20,10 @@ app.post("/api/v1/user/upload-image", async (req, res) => {
     throw new BadRequestError("Please upload image smaller than 10MB");
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = dirname(__filename);
-  const imagePath = join(__dirname, "public/uploads/" + `${image.name}`);
+  const imagePath = join(
+    __dirname,
+    "./client/dist/public/uploads/" + `${image.name}`
+  );
   console.log(__filename, __dirname, imagePath);
   await image.mv(imagePath);
   res.json({ img: { src: `/uploads/${image.name}` } });
