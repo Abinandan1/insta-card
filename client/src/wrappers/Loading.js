@@ -3,8 +3,8 @@ const Wrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  min-width: 100vw;
-  min-height: 100vh;
+  width: 100vw;
+  min-height: 100dvh;
   background: rgba(0, 0, 0, 0.3);
   display: grid;
   place-items: center;
@@ -15,7 +15,7 @@ const Wrapper = styled.div`
     width: 5rem;
     height: 5rem;
     border-top-color: var(--primary-color);
-    animation: 1s loading infinite linear;
+    animation: s loading infinite linear;
   }
 
   @keyframes loading {
