@@ -17,7 +17,6 @@ const ContentPreview = () => {
     profile,
     setIsLoading,
   } = useHomeContext();
-  setIsLoading(false);
   return (
     <Wrapper font={font} bg={bg} color={color}>
       <div className="preview-container">

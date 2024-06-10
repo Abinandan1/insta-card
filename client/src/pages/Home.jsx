@@ -16,9 +16,7 @@ const Home = () => {
   const [font, setFont] = useState(fonts[0]);
   const [name, setName] = useState("abinandan_at");
   const [tag, setTag] = useState("Erode, India");
-  const [profile, setProfile] = useState(
-    localStorage.getItem("profile") || admin
-  );
+  const [profile, setProfile] = useState(admin);
   const [content, setContent] = useState(
     localStorage.getItem("content") ||
       "Design your card to express your views, thoughts, memories & happenings. You can use these cards to share it on your social media platforms."
