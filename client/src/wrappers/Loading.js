@@ -1,10 +1,10 @@
 import styled from "styled-components";
 const Wrapper = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  min-height: 100lvh;
+  min-height: 100vh;
   background: rgba(0, 0, 0, 0.3);
   display: grid;
   place-items: center;
