@@ -1,6 +1,8 @@
 import Wrapper from "../wrappers/Navbar";
 import Logo from "./Logo";
 import { FiDownload } from "react-icons/fi";
+import { MdDownloadForOffline } from "react-icons/md";
+import { IoMdCloudDownload, IoMdDownload } from "react-icons/io";
 import * as htmlToImage from "html-to-image";
 import { useHomeContext } from "../pages/Home";
 const Navbar = () => {
@@ -26,7 +28,7 @@ const Navbar = () => {
         <Logo />
         <button onClick={handleDownload} className="download-btn">
           <span className="icon">
-            <FiDownload />
+            <IoMdCloudDownload />
           </span>
           image
         </button>

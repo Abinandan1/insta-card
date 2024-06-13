@@ -14,20 +14,21 @@ const Wrapper = styled.nav`
     display: flex;
     gap: 0.25rem;
     align-items: center;
-    background: var(--black-color);
-    color: var(--white-color);
+    background: transparent;
+    border: solid 2px var(--primary-500);
+    color: var(--primary-500);
     padding: 0.5rem 1rem;
     text-transform: capitalize;
     letter-spacing: 1px;
-    border-radius: 0.25rem;
+    border-radius: 2rem;
     box-shadow: var(--shadow-2);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     cursor: pointer;
     transition: all 0.3s linear;
   }
   .download-btn:hover {
-    background: transparent;
-    color: var(--black-color);
+    background: var(--primary-500);
+    color: var(--white-color);
   }
   .icon {
     display: flex;

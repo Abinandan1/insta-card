@@ -11,10 +11,10 @@ const Wrapper = styled.div`
   z-index: 2;
   .loading {
     border-radius: 50%;
-    border: 4px solid var(--light-color);
+    border: 4px solid var(--primary-50);
     width: 5rem;
     height: 5rem;
-    border-top-color: var(--primary-color);
+    border-top-color: var(--primary-500);
     animation: 0.7s loading infinite linear;
   }
 
@@ -23,16 +23,16 @@ const Wrapper = styled.div`
       transform: rotate(360deg);
     }
     0% {
-      border-top-color: var(--primary-color);
+      border-top-color: var(--primary-800);
     }
     25% {
-      border-top-color: var(--secondary-color);
+      border-top-color: var(--primary-500);
     }
     50% {
-      border-top-color: var(--gray-color-500);
+      border-top-color: var(--primary-200);
     }
     75% {
-      border-top-color: var(--dark-color);
+      border-top-color: var(--primary-800);
     }
   }
 `;

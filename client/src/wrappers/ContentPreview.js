@@ -1,6 +1,7 @@
 import styled from "styled-components";
 const Wrapper = styled.section`
-  background: var(--light-color);
+  background: var(--primary-500);
+  border-radius: 0.5rem;
   box-shadow: var(--shadow-3);
   margin-bottom: 2rem;
   padding: 1.5rem 2rem;
@@ -46,10 +47,10 @@ const Wrapper = styled.section`
     object-fit: cover;
   }
   .user-info {
-    font-size: 0.875rem;
+    font-size: 1rem;
     letter-spacing: 1px;
     display: grid;
-    gap: 0.25rem;
+    /* gap: 0.25rem; */
     color: var(--text-color);
   }
   .user-info p:last-child {

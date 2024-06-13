@@ -10,12 +10,13 @@ const Wrapper = styled.section`
   .description {
     font-size: 1.25rem;
     padding: 1.5rem 2rem;
-    line-height: 1;
+    line-height: 1.25;
     box-shadow: var(--shadow-3);
-    background: var(--light-color);
-    text-align: justify;
+    background: var(--primary-500);
+    border-radius: 0.5rem;
     margin-bottom: 2rem;
     max-width: 500px;
+    color: var(--white-color);
   }
   /* .download-preview {
     background: var(--light-color);

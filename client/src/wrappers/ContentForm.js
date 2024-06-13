@@ -1,6 +1,6 @@
 import styled from "styled-components";
 const Wrapper = styled.section`
-  background: var(--light-color);
+  background: var(--primary-200);
   box-shadow: var(--shadow-3);
   .form-container {
   }
@@ -19,10 +19,18 @@ const Wrapper = styled.section`
   .form-label {
     margin-bottom: 0.75rem;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: bolder;
     letter-spacing: 1px;
+    color: var(--primary-950);
+    border-radius: 1rem;
+    border-left: 6px solid var(--primary-950);
+    border-right: 6px solid var(--primary-950);
+    border-top: 2px solid var(--primary-950);
+    border-bottom: 2px solid var(--primary-950);
+    justify-self: start;
+    padding: 0 0.5rem;
   }
-  .form-label::before {
+  /* .form-label::before {
     content: "[ ";
     color: var(--primary-color);
     font-weight: bolder;
@@ -33,7 +41,7 @@ const Wrapper = styled.section`
     color: var(--primary-color);
     font-weight: bolder;
     font-size: 1.1rem;
-  }
+  } */
   .radio-container {
     display: flex;
     gap: 1rem;
@@ -73,7 +81,7 @@ const Wrapper = styled.section`
     font-size: 1rem;
   }
   .form-image {
-    background: var(--secondary-color);
+    background: var(--primary-500);
     padding: 0.5rem;
     border-radius: 0.25rem;
   }
@@ -85,12 +93,12 @@ const Wrapper = styled.section`
     .form-label {
       font-size: 1.25rem;
     }
-    .form-label::after {
+    /* .form-label::after {
       font-size: 1.25rem;
     }
     .form-label::before {
       font-size: 1.25rem;
-    }
+    } */
   }
 `;
 
